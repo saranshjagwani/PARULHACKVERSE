@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import myContext from "@/context/data/myContext";
+import myContext from "@/Context/data/myContext";
 
 export const ProtectedRoutes = ({ children }) => {
     if (localStorage.getItem('user')) {

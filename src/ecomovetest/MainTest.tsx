@@ -3,7 +3,7 @@ import ObjectDetection from "@/ecomovetest/ObjectDetection";
 import Navbar from "@/components/ui/Navbar";
 import IntroVideo from "@/ecomovetest/IntroVideo";
 import Footer from "./Footer";
-import myContext from "@/context/data/myContext";
+import myContext from "@/Context/data/myContext";
 import ProductShowcase from "./ProductShowcase";
 
 const MainTest: React.FC = () => {

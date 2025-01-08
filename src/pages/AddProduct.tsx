@@ -4,6 +4,16 @@ import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { fireDB } from "@/firebase/FirebaseConfig";
 import { toast } from "react-toastify";
 
+// Define interface for error types
+interface ProductErrors {
+  title?: string;
+  price?: string;
+  imageUrl?: string;
+  alternativefor?: string;
+  Category?: string;
+  description?: string;
+}
+
 const AddProduct = () => {
   const [products, setProducts] = useState({
     title: "",
@@ -21,7 +31,7 @@ const AddProduct = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<any>({});
+  const [errors, setErrors] = useState<ProductErrors>({});
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,9 +42,12 @@ const AddProduct = () => {
   // Validate form fields
   const validateFields = () => {
     const { title, price, imageUrl, alternativefor, description, Category } = products;
-    const errors: any = {};
+    const errors: ProductErrors = {};
+
     if (!title) errors.title = "Title is required.";
-    if (!price || isNaN(price) || parseFloat(price) <= 0) errors.price = "Price must be a valid positive number.";
+    if (!price || isNaN(parseFloat(price)) || parseFloat(price) <= 0) {
+      errors.price = "Price must be a valid positive number.";
+    }
     if (!imageUrl) errors.imageUrl = "Image URL is required.";
     if (!alternativefor) errors.alternativefor = "Alternative For is required.";
     if (!description) errors.description = "Description is required.";

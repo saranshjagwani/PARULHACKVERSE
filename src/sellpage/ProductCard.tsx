@@ -10,7 +10,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { fireDB } from "@/firebase/FirebaseConfig";
-import myContext from "@/context/data/myContext";
+import myContext from "@/Context/data/myContext";
 import { MinusCircle, PlusCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 

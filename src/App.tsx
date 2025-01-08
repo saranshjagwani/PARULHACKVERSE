@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate,
 } from "react-router-dom";
 import Signup from "./auth/Signup";
 import MainTest from "./ecomovetest/MainTest";
@@ -16,7 +15,7 @@ import { store } from "@/redux/Store";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import { ProtectedRoutesForAdmin } from "./routes/routes";
-import MyState from "./context/data/myState";
+import MyState from "./Context/data/MyState";
 import ProductInfo from "./sellpage/ProductInfo";
 import SearchPage from "./sellpage/SearchPage";
 

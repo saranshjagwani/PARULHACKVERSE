@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { FaUserTie } from 'react-icons/fa';
-import myContext from '@/context/data/myContext';  // Ensure myContext is exported correctly
+import myContext from '@/Context/data/myContext';  // Ensure myContext is exported correctly
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/ecomovetest/Footer';
 import DashboardTab from './DashboardTab';
-import { MyProvider } from '@/context/data/myState';
 
 const Dashboard: React.FC = () => {
   // Using useContext to get the context value
@@ -16,7 +15,6 @@ const Dashboard: React.FC = () => {
   }
 
   // Since there's only light mode, directly set the mode to 'light'
-  const mode = 'light'; 
 
   // Light theme
   const ecoTheme = {

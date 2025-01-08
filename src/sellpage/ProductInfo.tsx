@@ -33,10 +33,25 @@ const ProductInfo: React.FC = () => {
   if (!product) {
     return <div>Loading...</div>; // Loading state
   }
+
+  // Function to render stars based on rating
   const renderStars = (rating: number) => {
-    const filledStars = Math.floor(rating);
-    const emptyStars = 5 - filledStars;
-  }
+    const filledStars = Math.floor(rating); // Calculate filled stars
+    const emptyStars = 5 - filledStars; // Calculate empty stars
+    
+    // Create an array of stars and return a JSX element
+    return (
+      <>
+        {[...Array(filledStars)].map((_, index) => (
+          <span key={`filled-${index}`} className="text-yellow-500">⭐</span>
+        ))}
+        {[...Array(emptyStars)].map((_, index) => (
+          <span key={`empty-${index}`} className="text-gray-300">☆</span>
+        ))}
+      </>
+    );
+  };
+
   return (
     <div>
       <Navbar/>
