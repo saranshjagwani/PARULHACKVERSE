@@ -15,7 +15,7 @@ import { store } from "@/redux/Store";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import { ProtectedRoutesForAdmin } from "./routes/routes";
-import MyState from "@/Context/data/MyState";
+import MyState from "@/Context/data/myState";
 import ProductInfo from "./sellpage/ProductInfo";
 import SearchPage from "./sellpage/SearchPage";
 
